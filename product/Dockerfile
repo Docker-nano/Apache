@@ -1,6 +1,6 @@
 FROM scratch
-MAINTAINER Your Name <em@il>
+MAINTAINER Christian Häusler <haeusler.christian@mac.com>
 
 ADD	rootfs.tar.xz	/
 
-CMD	["/usr/bin/binary"]
+CMD	["bash"]
