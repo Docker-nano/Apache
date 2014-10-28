@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Name of local Docker image.
-NANO_IMAGE=dockernano/<product>
+NANO_IMAGE=dockernano/httpd
 
 # Name of local Docker container.
-NANO_CONTAINER=<Product>
+NANO_CONTAINER=httpd
