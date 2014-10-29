@@ -22,20 +22,20 @@ To build the rootfs follow these steps.
 Creating a Docker image
 -----------------------
 
-1. `docker build -t nano/httpd product`
+1. `docker build -t nano/apache product`
 
 Travis CI
 ---------
 
 [Travis](https://travis-ci.org) automatically [builds][Build] the rootfs when this repository is updated and commits
 the output to a copy of the *product* directory. The result is pushed to a different branch of the same name but with
-a *product* prefix, e.g. [product/master][Product branch]. This triggers Docker Hub to build the final image at
-[nano/<product>][Docker Hub repo].
+a *product* prefix, e.g. [product/apache][Product branch]. This triggers Docker Hub to build the final image at
+[nano/apache][Docker Hub repo].
 
 Travis does not support Docker yet so the entire Buildroot environment has to be replicated using `.travis.bash`. This
 also means Travis can only test the rootfs and not the resulting Docker image.
 
-  [Build]: http://travis-ci.org/Docker-nano/<Product>
-  [Build image]: http://img.shields.io/travis/Docker-nano/<Product>.svg "Build status"
-  [Product branch]: https://github.com/Docker-nano/<Product>/tree/product/master
-  [Docker Hub repo]: https://registry.hub.docker.com/u/nano/<product>/
+  [Build]: http://travis-ci.org/Docker-nano/Apache
+  [Build image]: http://img.shields.io/travis/Docker-nano/Apache.svg "Build status"
+  [Product branch]: https://github.com/Docker-nano/Apache/tree/product/apache
+  [Docker Hub repo]: https://registry.hub.docker.com/u/nano/Apache/
