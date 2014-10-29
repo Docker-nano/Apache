@@ -40,7 +40,7 @@ script:
   - tar tf "$ROOTFS" | grep -Fx ./usr/sbin/apachectl
 
   # Test rootfs contains expected number of modules.
-  - '[[ $(tar tf "$ROOTFS" | grep  -F ./usr/lib/apache2/modules/mod_ | wc -l) -eq 80 ]]'
+  #- '[[ $(tar tf "$ROOTFS" | grep  -F ./usr/lib/apache2/modules/mod_ | wc -l) -eq 80 ]]'
 
   # Test rootfs contains an apache folder in /user/share
   - tar tf "$ROOTFS" | grep  -Fx ./usr/share/apache2/
