@@ -33,7 +33,6 @@ script:
   - '[[ -r $ROOTFS ]]'
 
   # Test rootfs begins with root entry.
-  - tar tf "$ROOTFS"
   - '[[ $(tar tf "$ROOTFS" | head -1) = ./ ]]'
 
   # Test rootfs contains httpd binaries.
