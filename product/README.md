@@ -6,7 +6,7 @@ Nano Apache Httpd
 This is the [Docker Nano](https://github.com/Docker-nano) image for Apache Httpd v<2.4.9>.
 
 * Docker Hub image: [`nano/httpd`][Docker Hub repo]
-* Size: ~<NN>MB
+* Size: ~25MB
 
 Usage
 -----
