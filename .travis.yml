@@ -35,14 +35,13 @@ script:
   # Test rootfs begins with root entry.
   - '[[ $(tar tf "$ROOTFS" | head -1) = ./ ]]'
 
-  # Test rootfs contains httpd binaries.
-  - tar tf "$ROOTFS" | grep -Fx ./usr/sbin/httpd
-  - tar tf "$ROOTFS" | grep -Fx ./usr/sbin/apachectl
+  # Test rootfs contains httpd and apachectl binaries.
+  - (( $(tar tf "$ROOTFS" | grep -Fxce ./usr/sbin/httpd -e ./usr/sbin/apachectl) == 2 ))
 
-  # Test rootfs contains expected number of modules.
-  #- '[[ $(tar tf "$ROOTFS" | grep  -F ./usr/lib/apache2/modules/mod_ | wc -l) -eq 80 ]]'
+  # Test rootfs contains at least 50 modules.
+  - (( $(tar tf "$ROOTFS" | grep -Exc './usr/lib/apache2/modules/mod_\w+\.so') > 50 ));
 
-  # Test rootfs contains an apache folder in /user/share
+  # Test rootfs contains an apache folder in /user/share.
   - tar tf "$ROOTFS" | grep  -Fx ./usr/share/apache2/
 
 after_failure:
@@ -51,7 +50,7 @@ after_failure:
 
 after_success:
   # Decrypt Git credentials file.
-  - openssl aes-256-cbc -K $encrypted_<hash>_key -iv $encrypted_<hash>_iv
+  - openssl aes-256-cbc -K $encrypted_f15df20e5c5d_key -iv $encrypted_f15df20e5c5d_iv
     -in .git-credentials.enc -out ~/.git-credentials -d
 
   # Work in new directory.
