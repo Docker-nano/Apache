@@ -38,5 +38,5 @@ cp	in/*.patch		~/buildroot/patches
 cp -r	in/httpd		~/buildroot/package/httpd
 
 # Apply patches.
-patch -p0 -d buildroot -i ~/buildroot/patches/*
+patch -p0 -d ~/buildroot -i ~/buildroot/patches/*
 
