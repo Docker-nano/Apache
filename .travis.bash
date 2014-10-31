@@ -12,7 +12,8 @@ apt-get update && DEBIAN_FRONTEND=noninteractive\
 wget -nv http://buildroot.uclibc.org/downloads/buildroot-$BUILDROOT_RELEASE.tar.bz2 &&\
 	tar xf buildroot-*.tar* &&\
 	rm buildroot-*.tar* &&\
-	ln -s buildroot-* buildroot
+	ln -s buildroot-* buildroot &&\
+	mkdir -v buildroot/patches
 
 (
 	cd buildroot
