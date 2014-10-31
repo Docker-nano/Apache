@@ -1,0 +1,9 @@
++++ package/Config.in
+@@ -975,6 +975,7 @@
+ 	source "package/hiawatha/Config.in"
+ 	source "package/hostapd/Config.in"
+ 	source "package/hplip/Config.in"
++	source "package/httpd/Config.in"
+ 	source "package/httping/Config.in"
+ if BR2_PACKAGE_BUSYBOX_SHOW_OTHERS
+ 	source "package/ifplugd/Config.in"

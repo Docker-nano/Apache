@@ -34,6 +34,9 @@ wget -nv https://github.com/Docker-nano/crosstool-NG/releases/download/1.0.1/x86
 cd -
 
 cp	in/buildroot.conf	~/buildroot/.config
-cp	in/package/Config.in	~/buildroot/package/Config.in
-cp -r	in/package/httpd	~/buildroot/package/httpd
+cp	in/*.patch		~/buildroot/patches
+cp -r	in/httpd		~/buildroot/package/httpd
+
+# Apply patches.
+patch -p0 -d buildroot -i ~/buildroot/patches/*
 
